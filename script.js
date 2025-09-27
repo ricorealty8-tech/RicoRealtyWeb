@@ -1,6 +1,44 @@
-// Script para el botón flotante de contacto
+// Script para el navbar responsivo y ocultar al hacer scroll
 document.addEventListener('DOMContentLoaded', function() {
-    const contactBtn = document.querySelector('.contact-btn');
+    const header = document.getElementById('header');
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('nav');
+    let lastScrollY = window.scrollY;
+    const isMobile = window.innerWidth <= 768;
+
+    // Toggle del menú móvil
+    menuToggle.addEventListener('click', function() {
+        nav.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+    });
+
+    // Cerrar menú al hacer clic en un enlace (solo en móviles)
+    if (isMobile) {
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                nav.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+    }
+
+    // Ocultar/mostrar header al hacer scroll (solo en móviles)
+    if (isMobile) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                // Scrolling hacia abajo
+                header.classList.add('hidden');
+            } else {
+                // Scrolling hacia arriba
+                header.classList.remove('hidden');
+            }
+            lastScrollY = window.scrollY;
+        });
+    }
+
+    // Script para el botón flotante de contacto
+    const contactBtn = document.querySelector('.floating-contact .contact-btn');
     const contactOptions = document.querySelector('.contact-options');
     
     contactBtn.addEventListener('click', function() {
@@ -58,4 +96,15 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', animateOnScroll);
     // Ejecutar una vez al cargar la página
     animateOnScroll();
+
+    // Ajustar el comportamiento del header en cambio de tamaño de ventana
+    window.addEventListener('resize', function() {
+        const newIsMobile = window.innerWidth <= 768;
+        
+        // Si cambiamos de móvil a escritorio o viceversa
+        if (isMobile !== newIsMobile) {
+            // Recargar la página para aplicar los cambios apropiados
+            location.reload();
+        }
+    });
 });
