@@ -1,5 +1,50 @@
-// Script para el carrusel de imágenes
+// Script para el carrusel de imágenes y navbar responsivo
 document.addEventListener('DOMContentLoaded', function() {
+    const header = document.getElementById('header');
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('nav');
+    let lastScrollY = window.scrollY;
+    const isMobile = window.innerWidth <= 768;
+
+    // Toggle del menú móvil
+    menuToggle.addEventListener('click', function() {
+        nav.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+        
+        // Prevenir el desplazamiento del body cuando el menú está abierto
+        if (nav.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Cerrar menú al hacer clic en un enlace (solo en móviles)
+    if (isMobile) {
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                nav.classList.remove('active');
+                menuToggle.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Restaurar desplazamiento
+            });
+        });
+    }
+
+    // Ocultar/mostrar header al hacer scroll (solo en móviles)
+    if (isMobile) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                // Scrolling hacia abajo
+                header.classList.add('hidden');
+            } else {
+                // Scrolling hacia arriba
+                header.classList.remove('hidden');
+            }
+            lastScrollY = window.scrollY;
+        });
+    }
+
     // Elementos del carrusel
     const slides = document.querySelectorAll('.carousel-slide');
     const dots = document.querySelectorAll('.dot');
@@ -68,8 +113,17 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!event.target.closest('.floating-contact')) {
             contactOptions.classList.remove('show');
         }
+        
+        // Cerrar menú de navegación si se hace clic fuera de él (en móviles)
+        if (isMobile && nav.classList.contains('active') && 
+            !event.target.closest('nav') && 
+            !event.target.closest('.menu-toggle')) {
+            nav.classList.remove('active');
+            menuToggle.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
     });
-    
+
     // Animación de elementos al hacer scroll
     const animateOnScroll = function() {
         const elements = document.querySelectorAll('.property-description, .property-video, .property-contact');
@@ -96,4 +150,16 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', animateOnScroll);
     // Ejecutar una vez al cargar la página
     animateOnScroll();
+
+    // Ajustar el comportamiento del header en cambio de tamaño de ventana
+    window.addEventListener('resize', function() {
+        const newIsMobile = window.innerWidth <= 768;
+        
+        // Si cambiamos de móvil a escritorio, restaurar el menú
+        if (isMobile && !newIsMobile) {
+            nav.classList.remove('active');
+            menuToggle.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
 });
