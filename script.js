@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', function() {
     menuToggle.addEventListener('click', function() {
         nav.classList.toggle('active');
         menuToggle.classList.toggle('active');
+        
+        // Prevenir el desplazamiento del body cuando el menú está abierto
+        if (nav.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
     });
 
     // Cerrar menú al hacer clic en un enlace (solo en móviles)
@@ -19,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', function() {
                 nav.classList.remove('active');
                 menuToggle.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Restaurar desplazamiento
             });
         });
     }
@@ -50,11 +58,27 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!event.target.closest('.floating-contact')) {
             contactOptions.classList.remove('show');
         }
+        
+        // Cerrar menú de navegación si se hace clic fuera de él (en móviles)
+        if (isMobile && nav.classList.contains('active') && 
+            !event.target.closest('nav') && 
+            !event.target.closest('.menu-toggle')) {
+            nav.classList.remove('active');
+            menuToggle.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
     });
     
     // Smooth scrolling para enlaces de navegación
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            // Si es un enlace interno y estamos en móvil, cerrar el menú
+            if (isMobile) {
+                nav.classList.remove('active');
+                menuToggle.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+            
             e.preventDefault();
             
             const targetId = this.getAttribute('href');
@@ -101,10 +125,11 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', function() {
         const newIsMobile = window.innerWidth <= 768;
         
-        // Si cambiamos de móvil a escritorio o viceversa
-        if (isMobile !== newIsMobile) {
-            // Recargar la página para aplicar los cambios apropiados
-            location.reload();
+        // Si cambiamos de móvil a escritorio, restaurar el menú
+        if (isMobile && !newIsMobile) {
+            nav.classList.remove('active');
+            menuToggle.classList.remove('active');
+            document.body.style.overflow = 'auto';
         }
     });
 });

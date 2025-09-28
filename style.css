@@ -566,14 +566,26 @@ footer {
     }
 }
 
-/* Responsive */
+/* RESPONSIVE - CORRECCIONES PARA CENTRAR EL NAVBAR */
 @media (max-width: 768px) {
     header .container {
         flex-wrap: wrap;
+        justify-content: center; /* Centra el contenido horizontalmente */
+        text-align: center; /* Centra el texto */
+    }
+    
+    .logo-container {
+        width: 100%;
+        justify-content: center; /* Centra el logo */
+        margin-bottom: 1rem; /* Espacio entre logo y menú */
     }
     
     .menu-toggle {
         display: flex;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
     }
     
     nav {
@@ -590,10 +602,19 @@ footer {
     nav ul {
         flex-direction: column;
         padding: 1rem 0;
+        align-items: center; /* Centra los elementos del menú */
     }
     
     nav ul li {
         margin: 0.5rem 0;
+        width: 100%;
+        text-align: center; /* Centra el texto de cada enlace */
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 0.5rem 0;
+        width: 100%;
     }
     
     .banner-content h2 {
@@ -641,5 +662,18 @@ footer {
     
     .banner-content h2 {
         font-size: 1.8rem;
+    }
+    
+    /* Asegurar que el menú esté centrado en móviles muy pequeños */
+    nav ul {
+        padding: 0.5rem 0;
+    }
+    
+    nav ul li {
+        margin: 0.3rem 0;
+    }
+    
+    .menu-toggle {
+        right: 10px;
     }
 }
