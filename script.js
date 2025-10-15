@@ -20,7 +20,7 @@ const properties = [
         price: "$750,000",
         description: "Spacious 3-bedroom condo with resort amenities including pool, gym, and 24/7 security. Perfect for vacation rental or permanent residence.",
         image: "https://images.unsplash.com/photo-1575517111839-3a4e5d13d0c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        link: "property2.html"
+        link: "propiedad2.html"
     },
  
 ];
