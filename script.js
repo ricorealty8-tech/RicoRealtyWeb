@@ -109,3 +109,135 @@ function updateProperties(newProperties) {
 //         renderProperties();
 //     }
 // }
+// Script principal para funcionalidades de la página
+document.addEventListener('DOMContentLoaded', function() {
+    initNavigation();
+    initFloatingContact();
+    initScrollAnimations();
+});
+
+// Navegación responsiva
+function initNavigation() {
+    const header = document.getElementById('header');
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('nav');
+    let lastScrollY = window.scrollY;
+    const isMobile = window.innerWidth <= 768;
+
+    if (menuToggle && nav) {
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            
+            if (nav.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Cerrar menú al hacer clic en enlaces (solo móviles)
+        if (isMobile) {
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    nav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+        }
+    }
+
+    // Ocultar header al hacer scroll en móviles
+    if (isMobile && header) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                header.classList.add('hidden');
+            } else {
+                header.classList.remove('hidden');
+            }
+            lastScrollY = window.scrollY;
+        });
+    }
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+}
+
+// Botón flotante de contacto - CORREGIDO
+function initFloatingContact() {
+    const contactBtn = document.querySelector('.floating-contact .contact-btn');
+    const contactOptions = document.querySelector('.floating-contact .contact-options');
+    
+    console.log('Contact button:', contactBtn);
+    console.log('Contact options:', contactOptions);
+    
+    if (contactBtn && contactOptions) {
+        contactBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            contactOptions.classList.toggle('show');
+        });
+        
+        // Cerrar al hacer clic fuera
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.floating-contact')) {
+                contactOptions.classList.remove('show');
+            }
+        });
+        
+        // Prevenir que se cierre al hacer clic en las opciones
+        contactOptions.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    } else {
+        console.error('No se encontraron los elementos del botón flotante');
+    }
+}
+
+// Animaciones al hacer scroll
+function initScrollAnimations() {
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.property-card, .about-text, .about-video');
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            
+            if (elementPosition < screenPosition) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+    
+    const animatedElements = document.querySelectorAll('.property-card, .about-text, .about-video');
+    animatedElements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    });
+    
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll();
+}
+
+// Recargar propiedades cuando sea necesario (para desarrollo)
+function refreshProperties() {
+    if (typeof renderProperties === 'function') {
+        renderProperties();
+    }
+}
