@@ -11,7 +11,7 @@ const properties = [
         title: "Beachfront Villa",
         price: "$1,250,000",
         description: "Luxury 4-bedroom villa with panoramic ocean views and private beach access. Features infinity pool, gourmet kitchen, and smart home technology.",
-        image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+        image: "assets/casa2.jpg",
         link: "property1.html"
     },
     {
