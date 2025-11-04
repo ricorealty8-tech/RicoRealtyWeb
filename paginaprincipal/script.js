@@ -12,7 +12,7 @@ const properties = [
         price: "$1,250,000",
         description: "Luxury 4-bedroom villa with panoramic ocean views and private beach access. Features infinity pool, gourmet kitchen, and smart home technology.",
         image: "assets/casa2.jpg",
-        link: "property1.html"
+        link: "propiedades/property1.html"
     },
     {
         id: 2,
