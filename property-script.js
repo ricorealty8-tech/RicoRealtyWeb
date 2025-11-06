@@ -1,39 +1,66 @@
 // Script para páginas individuales de propiedades
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded - Initializing property page');
     initPropertyPage();
     initNavigation();
     initFloatingContact();
     initScrollAnimations();
 });
 
-// Obtener ID de la propiedad desde la URL - ACTUALIZA ESTA FUNCIÓN
+// Obtener ID de la propiedad desde la URL - CORREGIDO
 function getPropertyIdFromUrl() {
+    // Obtener el ID del parámetro URL (ej: property.html?id=property1)
+    const urlParams = new URLSearchParams(window.location.search);
+    const propertyId = urlParams.get('id');
+    
+    console.log('URL Parameters:', Object.fromEntries(urlParams));
+    console.log('Property ID from URL:', propertyId);
+    
+    if (propertyId && propertiesData[propertyId]) {
+        return propertyId;
+    }
+    
+    // Fallback para compatibilidad con nombres de archivo antiguos
     const path = window.location.pathname;
     const filename = path.split('/').pop();
+    console.log('Current filename:', filename);
     
-    // AGREGAR NUEVAS PROPIEDADES AQUÍ
-    if (filename === 'property1.html') return 'property1';
-    if (filename === 'property2.html') return 'property2';
-    if (filename === 'property3.html') return 'property3';
-    if (filename === 'property4.html') return 'property4';
-    if (filename === 'property5.html') return 'property5';
-    if (filename === 'property6.html') return 'property6';
-    // Sigue agregando según necesites...
+    const fileToIdMap = {
+        'property.html': 'property1', // Para tu archivo actual
+        'property1.html': 'property1',
+        'property2.html': 'property2',
+        'property3.html': 'property3'
+    };
     
-    // Fallback: intentar extraer del nombre del archivo
-    const match = filename.match(/property(\d+)\.html/);
-    return match ? `property${match[1]}` : null;
+    const fallbackId = fileToIdMap[filename];
+    if (fallbackId) {
+        console.log('Using fallback ID:', fallbackId);
+        return fallbackId;
+    }
+    
+    console.error('No valid property ID found');
+    return null;
 }
 
 // Cargar y mostrar los datos de la propiedad
 function initPropertyPage() {
-    // Obtener el ID de la propiedad del nombre del archivo
+    // Obtener el ID de la propiedad
     const propertyId = getPropertyIdFromUrl();
+    console.log('Property ID from URL:', propertyId);
+    
+    // Verificar si propertiesData existe
+    if (typeof propertiesData === 'undefined') {
+        console.error('propertiesData is not defined. Make sure properties-data.js is loaded.');
+        showPropertyError();
+        return;
+    }
     
     if (propertyId && propertiesData[propertyId]) {
+        console.log('Property found:', propertiesData[propertyId]);
         loadPropertyData(propertyId);
     } else {
         console.error('Property not found:', propertyId);
+        console.log('Available properties:', Object.keys(propertiesData));
         showPropertyError();
     }
 }
@@ -43,11 +70,13 @@ function loadPropertyData(propertyId) {
     const property = propertiesData[propertyId];
     
     if (!property) {
+        console.error('Property not found:', propertyId);
+        console.log('Available properties:', Object.keys(propertiesData));
         showPropertyError();
         return;
     }
     
-    console.log('Loading property:', propertyId);
+    console.log('Loading property data for:', propertyId);
     
     // Actualizar título de la página
     document.title = `${property.title} - Rico Realty`;
@@ -73,15 +102,22 @@ function loadPropertyData(propertyId) {
     loadVideo(property.videoEmbed, property.videoUrl);
 }
 
-// Mostrar error si la propiedad no se encuentra
+// Mostrar error si la propiedad no se encuentra - MEJORADO
 function showPropertyError() {
+    const propertyId = new URLSearchParams(window.location.search).get('id');
     const main = document.querySelector('main');
+    
     if (main) {
         main.innerHTML = `
             <div class="container" style="text-align: center; padding: 4rem 2rem;">
                 <i class="fas fa-exclamation-triangle" style="font-size: 4rem; color: #f39c12; margin-bottom: 2rem;"></i>
                 <h2 style="color: var(--primary-color); margin-bottom: 1rem;">Propiedad No Encontrada</h2>
-                <p style="margin-bottom: 2rem; color: var(--text-color);">La propiedad que buscas no está disponible en este momento.</p>
+                <p style="margin-bottom: 1rem; color: var(--text-color);">
+                    La propiedad "${propertyId || ''}" no está disponible.
+                </p>
+                <p style="margin-bottom: 2rem; color: var(--text-light); font-size: 0.9rem;">
+                    Propiedades disponibles: ${Object.keys(propertiesData).join(', ')}
+                </p>
                 <a href="index.html" class="btn" style="display: inline-block;">Volver a la Página Principal</a>
             </div>
         `;
@@ -93,7 +129,10 @@ function loadCarouselImages(images) {
     const carouselImages = document.getElementById('carouselImages');
     const carouselDots = document.getElementById('carouselDots');
     
-    if (!carouselImages || !carouselDots) return;
+    if (!carouselImages || !carouselDots) {
+        console.error('Carousel elements not found');
+        return;
+    }
     
     // Limpiar carrusel existente
     carouselImages.innerHTML = '';
@@ -121,7 +160,10 @@ function loadCarouselImages(images) {
 // Cargar características
 function loadFeatures(features) {
     const featuresGrid = document.getElementById('featuresGrid');
-    if (!featuresGrid) return;
+    if (!featuresGrid) {
+        console.error('Features grid not found');
+        return;
+    }
     
     featuresGrid.innerHTML = '';
     
@@ -139,7 +181,10 @@ function loadFeatures(features) {
 // Cargar puntos destacados
 function loadHighlights(highlights) {
     const highlightsList = document.getElementById('propertyHighlights');
-    if (!highlightsList) return;
+    if (!highlightsList) {
+        console.error('Highlights list not found');
+        return;
+    }
     
     highlightsList.innerHTML = '';
     
@@ -150,7 +195,7 @@ function loadHighlights(highlights) {
     });
 }
 
-// FUNCIÓN ACTUALIZADA PARA CÓDIGO DE INSERCIÓN COMPLETO
+// FUNCIÓN PARA CÓDIGO DE INSERCIÓN COMPLETO
 function loadVideo(videoEmbed, videoUrl) {
     const videoSection = document.getElementById('videoSection');
     const videoEmbedContainer = document.getElementById('videoEmbed');
@@ -226,7 +271,10 @@ function initCarousel() {
     let currentSlide = 0;
     let autoPlayInterval;
     
-    if (slides.length === 0) return;
+    if (slides.length === 0) {
+        console.log('No slides found for carousel');
+        return;
+    }
     
     function showSlide(n) {
         slides.forEach(slide => slide.classList.remove('active'));
@@ -430,7 +478,9 @@ window.addEventListener('resize', function() {
     }
 });
 
-// Función para recargar la página si es necesario
-function refreshProperty() {
-    initPropertyPage();
+// Verificar que los datos se cargaron correctamente
+console.log('Property script loaded successfully');
+console.log('propertiesData available:', typeof propertiesData !== 'undefined');
+if (typeof propertiesData !== 'undefined') {
+    console.log('Available properties:', Object.keys(propertiesData));
 }

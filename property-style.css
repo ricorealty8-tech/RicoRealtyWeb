@@ -6,6 +6,12 @@
     --light-color: #f5f5f5;
     --dark-color: #333;
     --text-color: #444;
+    color-scheme: light;
+}
+
+/* Forzar tema claro */
+html {
+    background-color: #ffffff;
 }
 
 /* Reset y estilos generales */
@@ -154,6 +160,7 @@ nav ul li a:hover::after {
 .property-details {
     margin-top: 80px;
     padding: 2rem 0;
+    background-color: #ffffff;
 }
 
 /* Encabezado de la propiedad */
@@ -194,6 +201,7 @@ nav ul li a:hover::after {
 .property-gallery {
     margin-bottom: 4rem;
     animation: fadeIn 1s ease 0.2s both;
+    background-color: #ffffff;
 }
 
 .carousel {
@@ -305,6 +313,7 @@ nav ul li a:hover::after {
     gap: 3rem;
     margin-bottom: 4rem;
     animation: fadeIn 1s ease 0.4s both;
+    background-color: #ffffff;
 }
 
 .description-content h2 {
@@ -421,6 +430,7 @@ nav ul li a:hover::after {
 .property-video {
     margin-bottom: 4rem;
     animation: fadeIn 1s ease 0.6s both;
+    background-color: #ffffff;
 }
 
 .property-video h2 {
@@ -565,14 +575,10 @@ nav ul li a:hover::after {
     100% { background-position: -200% 0; }
 }
 
-/* Ocultar sección completa si no hay video */
-.video-section-hidden {
-    display: none !important;
-}
-
 /* Datos de contacto */
 .property-contact {
     animation: fadeIn 1s ease 0.8s both;
+    background-color: #ffffff;
 }
 
 .contact-card {
@@ -868,17 +874,6 @@ footer {
     }
 }
 
-@keyframes slideInRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
 /* RESPONSIVE DESIGN */
 @media (max-width: 1200px) {
     .carousel-images {
@@ -980,11 +975,6 @@ footer {
     .footer-logo-container {
         justify-content: center;
         margin-bottom: 1rem;
-    }
-    
-    /* Responsive para videos */
-    .video-embed {
-        border-radius: 8px;
     }
     
     .carousel-btn {
@@ -1111,21 +1101,37 @@ footer {
     }
 }
 
-/* Modo oscuro opcional */
+/* Anular modo oscuro del navegador */
 @media (prefers-color-scheme: dark) {
-    body {
-        background-color: #1a1a1a;
-        color: #e0e0e0;
+    :root {
+        color-scheme: light;
+    }
+    
+    html, body {
+        background-color: #ffffff !important;
+        color: #444 !important;
+    }
+    
+    .property-details,
+    .property-gallery,
+    .property-description,
+    .property-video,
+    .property-contact {
+        background-color: #ffffff !important;
     }
     
     .property-highlights,
     .contact-card {
-        background: #2d2d2d;
-        border-color: #404040;
+        background: linear-gradient(135deg, var(--light-color), #f8f9fa) !important;
+        border-color: #e9ecef !important;
     }
     
     .feature {
-        background: #2d2d2d;
-        color: #e0e0e0;
+        background: var(--light-color) !important;
+        color: #333 !important;
+    }
+    
+    .feature:hover {
+        background: white !important;
     }
 }

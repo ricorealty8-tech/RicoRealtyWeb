@@ -164,65 +164,11 @@ const propertiesData = {
         videoEmbed: null,
         videoUrl: null
     }
-    
+
     // PARA AGREGAR NUEVAS PROPIEDADES:
     // 1. Copia la estructura completa de property1
     // 2. Cambia "property1" por "property4" (o el siguiente número)
     // 3. Modifica TODOS los datos según la nueva propiedad
-    // 4. Crea el archivo HTML correspondiente (property4.html)
+    // 4. Actualiza los enlaces en index.html para usar: property.html?id=property4
     
 };
-
-// INSTRUCCIONES DETALLADAS:
-
-// CÓMO MODIFICAR UNA PROPIEDAD EXISTENTE:
-// 1. Encuentra la propiedad que quieres modificar (ej: "property1")
-// 2. Cambia cualquier dato: título, precio, descripción, imágenes, etc.
-// 3. Guarda el archivo
-// 4. La página se actualizará automáticamente
-
-// CÓMO AGREGAR UNA NUEVA PROPIEDAD:
-// 1. Copia toda la estructura de "property1"
-// 2. Pégala después de "property3"
-// 3. Cambia "property1" por "property4" (o el siguiente número)
-// 4. Modifica TODOS los datos con la información de la nueva propiedad
-// 5. Crea el archivo property4.html (copia de property1.html)
-// 6. Actualiza property-script.js (agregar en getPropertyIdFromUrl)
-
-// CÓMO OBTENER EL CÓDIGO DE YOUTUBE:
-// 1. Ve al video en YouTube
-// 2. Haz clic en "Compartir"
-// 3. Selecciona "Insertar"
-// 4. Copia TODO el código HTML
-// 5. Pégalo en videoEmbed (cambia width y height a "100%")
-// 6. Agrega la URL del video en videoUrl
-
-// EJEMPLO DE NUEVA PROPIEDAD:
-/*
-"property4": {
-    id: "property4",
-    title: "Luxury Penthouse",
-    address: "Punta Chivato, Baja California Sur",
-    price: "$2,100,000",
-    
-    description: `<p>Nueva descripción aquí...</p>`,
-    
-    images: [
-        "https://ejemplo.com/imagen1.jpg",
-        "https://ejemplo.com/imagen2.jpg"
-    ],
-    
-    features: [
-        { icon: "fas fa-bed", text: "3 Bedrooms" },
-        { icon: "fas fa-bath", text: "3 Bathrooms" }
-    ],
-    
-    highlights: [
-        "Nuevo punto destacado 1",
-        "Nuevo punto destacado 2"
-    ],
-    
-    videoEmbed: `<iframe ...></iframe>`,
-    videoUrl: "https://youtube.com/watch?v=ID_DEL_VIDEO"
-}
-*/
