@@ -21,10 +21,11 @@ const propertiesData = {
         
         // IMÁGENES - Modifica estas URLs
         images: [
-            "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+            "assets/casa1.jpg",
+            "assets/casa11.jpg",
+            "assets/casa111.jpg",
+            "assets/casa1111.jpg",
+            "assets/casa11111.jpg"
         ],
         
         // CARACTERÍSTICAS - Modifica esta lista
@@ -73,9 +74,11 @@ const propertiesData = {
         `,
         
         images: [
-            "https://images.unsplash.com/photo-1575517111839-3a4e5d13d0c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+            "assets/casa22.jpg",
+            "assets/casa222.jpg",
+            "assets/casa2222.jpg",
+            "assets/casa22222.jpg",
+            "assets/casa222222.jpg"
         ],
         
         features: [
@@ -100,19 +103,10 @@ const propertiesData = {
         ],
         
         videoEmbed: `
-            <iframe 
-                width="100%" 
-                height="100%" 
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1&showinfo=0" 
-                title="Modern Condo Tour - Luxury Living in Punta Chivato"
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
-            </iframe>
+            <iframe width="740" height="416" src="https://www.youtube.com/embed/odZPz3Kc5eY" title="Punta Chivato House for sale." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         `,
         
-        videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        videoUrl: "https://youtu.be/odZPz3Kc5eY"
     },
     
     // PROPIEDAD 3 - Desert Retreat
