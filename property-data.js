@@ -53,16 +53,7 @@ const propertiesData = {
         
         // VIDEO DE YOUTUBE - IMPORTANTE: Modifica con tu código de inserción
         videoEmbed: `
-            <iframe 
-                width="100%" 
-                height="100%" 
-                src="https://www.youtube.com/embed/jNQXAC9IVRw?rel=0&modestbranding=1&showinfo=0" 
-                title="Beachfront Villa Tour - Luxury Property in Punta Chivato"
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
-            </iframe>
+            <iframe width="740" height="416" src="https://www.youtube.com/embed/BtHCtMc8970" title="Punta Chivato house for sale" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         `,
         
         videoUrl: "https://www.youtube.com/watch?v=jNQXAC9IVRw"
