@@ -24,11 +24,11 @@ const properties = [
     },
      {
         id: 3,
-        title: "Beachfront Villa",
+        title: "No data",
         price: "0",
         description: "Luxury 4-bedroom villa with panoramic ocean views and private beach access. Features infinity pool, gourmet kitchen, and smart home technology.",
-        image: "assets/casa1.jpg",
-        link: "property1.html"
+        image: "assets/casa3.jpg",
+        link: "property3.html"
     },
       {
         id: 4,

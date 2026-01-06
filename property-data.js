@@ -112,9 +112,9 @@ const propertiesData = {
     // PROPIEDAD 3 - Desert Retreat
     "property3": {
         id: "property3",
-        title: "Desert Retreat",
+        title: "Casa3",
         address: "Punta Chivato, Baja California Sur",
-        price: "$1,800,000",
+        price: "No Data",
         
         description: `
             <p>Experience ultimate privacy and luxury in this stunning desert retreat. Nestled among native vegetation, this property offers complete seclusion while being just minutes from Punta Chivato's amenities.</p>
@@ -123,8 +123,7 @@ const propertiesData = {
         `,
         
         images: [
-            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+            "assets/casa3.jpg"
         ],
         
         features: [
