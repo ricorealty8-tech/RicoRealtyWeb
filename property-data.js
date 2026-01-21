@@ -54,7 +54,7 @@ const propertiesData = {
         
         // VIDEO DE YOUTUBE - IMPORTANTE: Modifica con tu código de inserción
         videoEmbed: `
-            <iframe width="740" height="416" src="https://www.youtube.com/embed/BtHCtMc8970" title="Punta Chivato house for sale" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe width="840" height="473" src="https://www.youtube.com/embed/DG80uhx4uAw" title="Punta Chivato house for sale" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         `,
         
         videoUrl: "https://www.youtube.com/watch?v=jNQXAC9IVRw"
@@ -145,8 +145,10 @@ const propertiesData = {
         ],
         
         // SIN VIDEO - Si no tienes video, deja esto como null
-        videoEmbed: null,
-        videoUrl: null
+        videoEmbed: `
+        <iframe width="953" height="536" src="https://www.youtube.com/embed/sriJxLtnC3U" title="Punta Chivato house for sale" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      `,
+        videoUrl: "https://www.youtube.com/watch?v=sriJxLtnC3U"
     }
 
     // PARA AGREGAR NUEVAS PROPIEDADES:
