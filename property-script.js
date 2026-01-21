@@ -31,6 +31,7 @@ function getPropertyIdFromUrl() {
         'property2.html': 'property2',
         'property3.html': 'property3',
         'property4.html': 'property4',
+        'property4.html': 'property5',
     };
     
     const fallbackId = fileToIdMap[filename];

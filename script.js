@@ -11,7 +11,7 @@ const properties = [
         title: "Beachfront Villa",
         price: "",
         description: "Luxury 4-bedroom villa with panoramic ocean views and private beach access. Features infinity pool, gourmet kitchen, and smart home technology.",
-        image: "assets/casa1.jpg",
+        image: "assets/casa1/casa1.jpg",
         link: "property1.html"
     },
     {
@@ -19,7 +19,7 @@ const properties = [
         title: "Modern Condo",
         price: "",
         description: "Spacious 3-bedroom condo with resort amenities including pool, gym, and 24/7 security. Perfect for vacation rental or permanent residence.",
-        image: "assets/casa2.jpg",
+        image: "assets/casa2/casa2.jpg",
         link: "property2.html"
     },
      {
@@ -27,7 +27,7 @@ const properties = [
         title: "No data",
         price: "",
         description: "Luxury 4-bedroom villa with panoramic ocean views and private beach access. Features infinity pool, gourmet kitchen, and smart home technology.",
-        image: "assets/casa3.jpg",
+        image: "assets/casa3/casa3.jpg",
         link: "property3.html"
     },
       {
@@ -35,11 +35,17 @@ const properties = [
         title: "Beachfront Villa",
         price: "",
         description: "Luxury 4-bedroom villa with panoramic ocean views and private beach access. Features infinity pool, gourmet kitchen, and smart home technology.",
-        image: "assets/casa2v2.jpg",
+        image: "assets/casa4/casa2v2.jpg",
         link: "property4.html"
     },
-    
-     
+       {
+        id: 5,
+        title: "Beachfront Villa",
+        price: "",
+        description: "Luxury 4-bedroom villa with panoramic ocean views and private beach access. Features infinity pool, gourmet kitchen, and smart home technology.",
+        image: "assets/casa5/foto1.jpg",
+        link: "property4.html"
+    }   
  
 ];
 

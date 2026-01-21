@@ -21,11 +21,11 @@ const propertiesData = {
         
         // IMÁGENES - Modifica estas URLs
         images: [
-            "assets/casa1.jpg",
-            "assets/casa11.jpg",
-            "assets/casa111.jpg",
-            "assets/casa1111.jpg",
-            "assets/casa11111.jpg"
+            "assets/casa1/casa1.jpg",
+            "assets/casa1/casa11.jpg",
+            "assets/casa1/casa111.jpg",
+            "assets/casa1/casa1111.jpg",
+            "assets/casa1/casa11111.jpg"
         ],
         
         // CARACTERÍSTICAS - Modifica esta lista
@@ -57,7 +57,7 @@ const propertiesData = {
       <iframe width="840" height="473" src="https://www.youtube.com/embed/DG80uhx4uAw" title="Punta Chivato house for sale" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         `,
         
-        videoUrl: "https://www.youtube.com/watch?v=jNQXAC9IVRw"
+       // videoUrl: "https://www.youtube.com/watch?v=jNQXAC9IVRw"
     },
     
     // PROPIEDAD 2 - Modern Condo
@@ -106,7 +106,7 @@ const propertiesData = {
             <iframe width="740" height="416" src="https://www.youtube.com/embed/odZPz3Kc5eY" title="Punta Chivato House for sale." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         `,
         
-        videoUrl: "https://youtu.be/odZPz3Kc5eY"
+       // videoUrl: "https://youtu.be/odZPz3Kc5eY"
     },
     
     // PROPIEDAD 3 - Desert Retreat
@@ -148,9 +148,9 @@ const propertiesData = {
         videoEmbed: `
         <iframe width="953" height="536" src="https://www.youtube.com/embed/sriJxLtnC3U" title="Punta Chivato house for sale" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       `,
-        videoUrl: "https://www.youtube.com/watch?v=sriJxLtnC3U"
+        //videoUrl: "https://www.youtube.com/watch?v=sriJxLtnC3U"
     },
-       // PROPIEDAD 3 - Desert Retreat
+       // PROPIEDAD 4 - Desert Retreat
     "property4": {
         id: "property4",
         title: "Casa3",
@@ -189,8 +189,55 @@ const propertiesData = {
         videoEmbed: `
         <iframe width="953" height="536" src="https://www.youtube.com/embed/sriJxLtnC3U" title="Punta Chivato house for sale" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       `,
-        videoUrl: "https://www.youtube.com/watch?v=sriJxLtnC3U"
+      //  videoUrl: "https://www.youtube.com/watch?v=sriJxLtnC3U"
+    },
+
+       // PROPIEDAD 4 - Desert Retreat
+    "property5": {
+        id: "property5",
+        title: "Casa3",
+        address: "Punta Chivato, Baja California Sur",
+        price: "",
+        
+        description: `
+            <p>Experience ultimate privacy and luxury in this stunning desert retreat. Nestled among native vegetation, this property offers complete seclusion while being just minutes from Punta Chivato's amenities.</p>
+            
+            <p>The architecture blends seamlessly with the natural landscape, featuring sustainable materials and passive solar design. Expansive windows frame breathtaking views of the desert and distant mountains.</p>
+        `,
+        
+        images: [
+            "assets/casa5/foto2.jpg",
+            "assets/casa5/foto3.jpg",
+            "assets/casa5/foto4.jpg"
+        ],
+        
+        features: [
+            { icon: "fas fa-bed", text: "5 Bedrooms" },
+            { icon: "fas fa-bath", text: "5 Bathrooms" },
+            { icon: "fas fa-ruler-combined", text: "5,200 sq ft" },
+            { icon: "fas fa-swimming-pool", text: "Private Pool" },
+            { icon: "fas fa-sun", text: "Solar Powered" },
+            { icon: "fas fa-mountain", text: "Desert Views" }
+        ],
+        
+        highlights: [
+            "Complete privacy and seclusion",
+            "Sustainable solar power system",
+            "Custom desert landscaping",
+            "Private hiking trails",
+            "Stargazing observatory",
+            "Artisan craftsmanship throughout"
+        ],
+        
+        // SIN VIDEO - Si no tienes video, deja esto como null
+        videoEmbed: `
+        <iframe width="953" height="536" src="https://www.youtube.com/embed/VLtKwSy6kGM" title="Punta Chivato house for sale" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    `,
+       // videoUrl: "https://www.youtube.com/watch?v=sriJxLtnC3U"
     }
+
+
+
 
 
     

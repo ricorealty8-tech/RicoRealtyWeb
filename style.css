@@ -156,7 +156,7 @@ nav ul li a:hover::after {
 .banner {
     height: 80vh;
     background: linear-gradient(rgba(26, 60, 90, 0.7), rgba(26, 60, 90, 0.5)), 
-                url('assets/banner.jpeg');
+                url('rico/banner.jpeg');
     background-size: cover;
     background-position: center;
     display: flex;
