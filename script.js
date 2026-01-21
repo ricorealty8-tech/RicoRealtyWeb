@@ -9,7 +9,7 @@ const properties = [
     {
         id: 1,
         title: "Beachfront Villa",
-        price: "0",
+        price: "",
         description: "Luxury 4-bedroom villa with panoramic ocean views and private beach access. Features infinity pool, gourmet kitchen, and smart home technology.",
         image: "assets/casa1.jpg",
         link: "property1.html"
@@ -17,7 +17,7 @@ const properties = [
     {
         id: 2,
         title: "Modern Condo",
-        price: "$750,000",
+        price: "",
         description: "Spacious 3-bedroom condo with resort amenities including pool, gym, and 24/7 security. Perfect for vacation rental or permanent residence.",
         image: "assets/casa2.jpg",
         link: "property2.html"
@@ -25,7 +25,7 @@ const properties = [
      {
         id: 3,
         title: "No data",
-        price: "0",
+        price: "",
         description: "Luxury 4-bedroom villa with panoramic ocean views and private beach access. Features infinity pool, gourmet kitchen, and smart home technology.",
         image: "assets/casa3.jpg",
         link: "property3.html"
@@ -33,10 +33,10 @@ const properties = [
       {
         id: 4,
         title: "Beachfront Villa",
-        price: "0",
+        price: "",
         description: "Luxury 4-bedroom villa with panoramic ocean views and private beach access. Features infinity pool, gourmet kitchen, and smart home technology.",
-        image: "assets/casa1.jpg",
-        link: "property1.html"
+        image: "assets/casa2v2.jpg",
+        link: "property4.html"
     },
     
      

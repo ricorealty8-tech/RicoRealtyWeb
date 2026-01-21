@@ -8,7 +8,7 @@ const propertiesData = {
         id: "property1",
         title: "Beachfront Villa",
         address: "Punta Chivato, Baja California Sur",
-        price: "$1,250,000",
+        price: null ,
         
         // DESCRIPCIÓN - Modifica este texto
         description: `
@@ -149,7 +149,51 @@ const propertiesData = {
         <iframe width="953" height="536" src="https://www.youtube.com/embed/sriJxLtnC3U" title="Punta Chivato house for sale" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       `,
         videoUrl: "https://www.youtube.com/watch?v=sriJxLtnC3U"
+    },
+       // PROPIEDAD 3 - Desert Retreat
+    "property4": {
+        id: "property4",
+        title: "Casa3",
+        address: "Punta Chivato, Baja California Sur",
+        price: "",
+        
+        description: `
+            <p>Experience ultimate privacy and luxury in this stunning desert retreat. Nestled among native vegetation, this property offers complete seclusion while being just minutes from Punta Chivato's amenities.</p>
+            
+            <p>The architecture blends seamlessly with the natural landscape, featuring sustainable materials and passive solar design. Expansive windows frame breathtaking views of the desert and distant mountains.</p>
+        `,
+        
+        images: [
+            "assets/casa2v2.jpg"
+        ],
+        
+        features: [
+            { icon: "fas fa-bed", text: "5 Bedrooms" },
+            { icon: "fas fa-bath", text: "5 Bathrooms" },
+            { icon: "fas fa-ruler-combined", text: "5,200 sq ft" },
+            { icon: "fas fa-swimming-pool", text: "Private Pool" },
+            { icon: "fas fa-sun", text: "Solar Powered" },
+            { icon: "fas fa-mountain", text: "Desert Views" }
+        ],
+        
+        highlights: [
+            "Complete privacy and seclusion",
+            "Sustainable solar power system",
+            "Custom desert landscaping",
+            "Private hiking trails",
+            "Stargazing observatory",
+            "Artisan craftsmanship throughout"
+        ],
+        
+        // SIN VIDEO - Si no tienes video, deja esto como null
+        videoEmbed: `
+        <iframe width="953" height="536" src="https://www.youtube.com/embed/sriJxLtnC3U" title="Punta Chivato house for sale" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      `,
+        videoUrl: "https://www.youtube.com/watch?v=sriJxLtnC3U"
     }
+
+
+    
 
     // PARA AGREGAR NUEVAS PROPIEDADES:
     // 1. Copia la estructura completa de property1

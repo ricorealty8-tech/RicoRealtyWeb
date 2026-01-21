@@ -29,7 +29,8 @@ function getPropertyIdFromUrl() {
         'property.html': 'property1', // Para tu archivo actual
         'property1.html': 'property1',
         'property2.html': 'property2',
-        'property3.html': 'property3'
+        'property3.html': 'property3',
+        'property4.html': 'property4',
     };
     
     const fallbackId = fileToIdMap[filename];
