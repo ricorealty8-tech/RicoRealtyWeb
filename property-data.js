@@ -65,7 +65,7 @@ const propertiesData = {
         id: "property2",
         title: "Modern Condo",
         address: "Punta Chivato, Baja California Sur",
-        price: "$750,000",
+        price: "",
         
         description: `
             <p>This exquisite modern condo offers sophisticated urban living in the heart of Punta Chivato. Featuring contemporary design and high-end finishes, this property combines luxury with convenience in one of the most desirable locations.</p>
