@@ -74,11 +74,11 @@ const propertiesData = {
         `,
         
         images: [
-            "assets/casa22.jpg",
-            "assets/casa222.jpg",
-            "assets/casa2222.jpg",
-            "assets/casa22222.jpg",
-            "assets/casa222222.jpg"
+            "assets/casa2/casa22.jpg",
+            "assets/casa2/casa222.jpg",
+            "assets/casa2/casa2222.jpg",
+            "assets/casa2/casa22222.jpg",
+            "assets/casa2/casa222222.jpg"
         ],
         
         features: [
@@ -123,7 +123,7 @@ const propertiesData = {
         `,
         
         images: [
-            "assets/casa3.jpg"
+            "assets/casa3/casa3.jpg"
         ],
         
         features: [
@@ -171,7 +171,7 @@ const propertiesData = {
             { icon: "fas fa-bed", text: "5 Bedrooms" },
             { icon: "fas fa-bath", text: "5 Bathrooms" },
             { icon: "fas fa-ruler-combined", text: "5,200 sq ft" },
-            { icon: "fas fa-swimming-pool", text: "Private Pool" },
+           // { icon: "fas fa-swimming-pool", text: "Private Pool" },
             { icon: "fas fa-sun", text: "Solar Powered" },
             { icon: "fas fa-mountain", text: "Desert Views" }
         ],
@@ -215,7 +215,7 @@ const propertiesData = {
             { icon: "fas fa-bed", text: "5 Bedrooms" },
             { icon: "fas fa-bath", text: "5 Bathrooms" },
             { icon: "fas fa-ruler-combined", text: "5,200 sq ft" },
-            { icon: "fas fa-swimming-pool", text: "Private Pool" },
+           // { icon: "fas fa-swimming-pool", text: "Private Pool" },
             { icon: "fas fa-sun", text: "Solar Powered" },
             { icon: "fas fa-mountain", text: "Desert Views" }
         ],
